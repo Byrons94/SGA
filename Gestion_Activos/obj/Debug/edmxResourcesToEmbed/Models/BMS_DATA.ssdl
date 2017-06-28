@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BMS_DATA_DENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="INV_DANOS">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="Descripcion" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CIA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INV_GARA">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="NUM_DOC_GARANTIA" />
+      <PropertyRef Name="CODIGO_BOLETA" />
+    </Key>
+    <Property Name="CIA" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="NUM_DOC_GARANTIA" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="FECHA_INGRESO" Type="datetime" Nullable="false" />
+    <Property Name="TIPO_GARANTIA" Type="char" MaxLength="1" />
+    <Property Name="COD_CLIE" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="NOTA_1" Type="char" MaxLength="70" />
+    <Property Name="CODIGO_BOLETA" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TECNICO" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="FECHA_ENTREGA" Type="datetime" />
+    <Property Name="PROBLEMA_1" Type="char" MaxLength="70" />
+    <Property Name="PROBLEMA_2" Type="char" MaxLength="70" />
+    <Property Name="PROBLEMA_3" Type="char" MaxLength="70" />
+    <Property Name="PROBLEMA_4" Type="char" MaxLength="70" />
+    <Property Name="SOLUCION_1" Type="char" MaxLength="70" />
+    <Property Name="SOLUCION_2" Type="char" MaxLength="70" />
+    <Property Name="SOLUCION_3" Type="char" MaxLength="70" />
+    <Property Name="SOLUCION_4" Type="char" MaxLength="70" />
+    <Property Name="STATUS" Type="char" MaxLength="1" />
+    <Property Name="RMA" Type="char" MaxLength="10" />
+    <Property Name="CONTACTO" Type="char" MaxLength="70" />
+    <Property Name="TELEFONO" Type="char" MaxLength="70" />
+    <Property Name="HORA" Type="char" MaxLength="5" />
+    <Property Name="FECHA_REPARADO" Type="datetime" />
+    <Property Name="RECIBE" Type="char" MaxLength="10" />
+    <Property Name="ORDEN_COMPRA" Type="char" MaxLength="10" />
+    <Property Name="USUARIO" Type="char" MaxLength="10" />
+    <Property Name="FACTURADO" Type="char" MaxLength="1" />
+    <Property Name="FACTURA" Type="char" MaxLength="10" />
+    <Property Name="MANO_OBRA" Type="money" />
+    <Property Name="MATERIALES" Type="money" />
+    <Property Name="N_COORDINA" Type="char" MaxLength="50" />
+    <Property Name="N_EJECUTIVO" Type="char" MaxLength="50" />
+    <Property Name="N_AFILIADO" Type="char" MaxLength="10" />
+    <Property Name="N_CLIENTE" Type="char" MaxLength="50" />
+    <Property Name="N_DIRECCION" Type="char" MaxLength="300" />
+    <Property Name="N_HORA_P" Type="char" MaxLength="5" />
+    <Property Name="N_FECHA_P" Type="datetime" />
+    <Property Name="N_CANTIDAD" Type="money" />
+    <Property Name="N_TECNICO" Type="char" MaxLength="50" />
+    <Property Name="N_TIPO" Type="char" MaxLength="300" />
+    <Property Name="N_INTERNET" Type="char" MaxLength="1" />
+    <Property Name="N_MUEBLE" Type="char" MaxLength="1" />
+    <Property Name="N_ELECTRICIDAD" Type="char" MaxLength="1" />
+    <Property Name="N_COD_PROV" Type="char" MaxLength="1" />
+    <Property Name="N_COD_CANT" Type="char" MaxLength="2" />
+    <Property Name="N_COD_DIST" Type="char" MaxLength="2" />
+    <Property Name="TIPO_EVENTO" Type="char" MaxLength="1" />
+    <Property Name="FECHA_DIAGNOSTICADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="INV_GARV">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="NUM_DOC_GARANTIA" />
+      <PropertyRef Name="SECUENCIA" />
+    </Key>
+    <Property Name="CIA" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="NUM_DOC_GARANTIA" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="SECUENCIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
+    <Property Name="HORA" Type="char" MaxLength="5" />
+    <Property Name="DETALLE1" Type="char" MaxLength="70" />
+    <Property Name="DETALLE2" Type="char" MaxLength="70" />
+    <Property Name="DETALLE3" Type="char" MaxLength="70" />
+    <Property Name="CONFIDENCIAL" Type="char" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="INV_MOV1">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="COD_TIPO" />
+      <PropertyRef Name="NUM_DOC" />
+    </Key>
+    <Property Name="CIA" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="MES_PROC" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ANO_PROC" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="COD_TIPO" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="NUM_DOC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="CONSECUTIVO" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+    <Property Name="FECHA_DIG" Type="datetime" Nullable="false" />
+    <Property Name="USUARIO" Type="varchar" MaxLength="30" />
+    <Property Name="COD_AUX1" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="COD_AUX2" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="SISTEMA" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="CAMBIO" Type="money" />
+    <Property Name="COSTO_L" Type="money" />
+    <Property Name="COSTO_E" Type="money" />
+    <Property Name="BRUTO" Type="money" />
+    <Property Name="BRUTO_EX" Type="money" />
+    <Property Name="BRUTO_GR" Type="money" />
+    <Property Name="IMP_1" Type="money" />
+    <Property Name="IMP_2" Type="money" />
+    <Property Name="IMP_3" Type="money" />
+    <Property Name="IMP_4" Type="money" />
+    <Property Name="DESCUENTO" Type="money" />
+    <Property Name="DESCUENTO_EX" Type="money" />
+    <Property Name="DESCUENTO_GR" Type="money" />
+    <Property Name="NETO" Type="money" />
+    <Property Name="NETO_EX" Type="money" />
+    <Property Name="NETO_GR" Type="money" />
+    <Property Name="NULO" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NOTAS" Type="char" MaxLength="100" />
+    <Property Name="CIA_CXP" Type="char" MaxLength="3" />
+    <Property Name="COD_PROV" Type="char" MaxLength="5" />
+    <Property Name="TIPO_CREDITO" Type="char" MaxLength="1" />
+    <Property Name="F_VENCE" Type="datetime" />
+    <Property Name="REFERENCIA" Type="char" MaxLength="10" />
+    <Property Name="ADI1" Type="money" />
+    <Property Name="ADI2" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ADI3" Type="money" />
+    <Property Name="ADI4" Type="char" MaxLength="30" />
+    <Property Name="ADI5" Type="char" MaxLength="50" />
+    <Property Name="ADI6" Type="char" MaxLength="30" />
+    <Property Name="ADI7" Type="char" MaxLength="30" />
+    <Property Name="ADI8" Type="char" MaxLength="30" />
+    <Property Name="ADI9" Type="datetime" />
+    <Property Name="ADI10" Type="datetime" />
+    <Property Name="ADI11" Type="datetime" />
+    <Property Name="COD_VEND" Type="char" MaxLength="5" />
+    <Property Name="COD_RUTA" Type="char" MaxLength="5" />
+    <Property Name="NIVEL_PRECIO" Type="char" MaxLength="1" />
+    <Property Name="COD_FPAG" Type="char" MaxLength="2" />
+    <Property Name="CIA_FAC" Type="char" MaxLength="3" />
+    <Property Name="DETALLE" Type="text" />
+    <Property Name="MONEDA" Type="char" MaxLength="1" />
+    <Property Name="IMPRIMIR_SERV" Type="char" MaxLength="1" />
+    <Property Name="CONFIRMADO" Type="char" MaxLength="1" />
+    <Property Name="USER_CONFIRMA" Type="char" MaxLength="30" />
+    <Property Name="DIA_CONFIRMA" Type="datetime" />
+    <Property Name="STATUS_ENT" Type="char" MaxLength="1" />
+    <Property Name="MOTIVO" Type="varchar" MaxLength="300" />
+    <Property Name="X" Type="char" MaxLength="20" />
+    <Property Name="Y" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="INV_MOVS">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="COD_TIPO" />
+      <PropertyRef Name="NUM_DOC" />
+      <PropertyRef Name="COD_PROD" />
+      <PropertyRef Name="CONSECUTIVO" />
+    </Key>
+    <Property Name="CIA" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="COD_TIPO" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="NUM_DOC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="COD_PROD" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="CONSECUTIVO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SERIE" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="NOTAS" Type="char" MaxLength="90" Nullable="false" />
+    <Property Name="PEDIDO" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="INV_PROD">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="COD_PROD" />
+    </Key>
+    <Property Name="CIA" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="COD_PROD" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="COD_FAMI" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="COD_SUBF" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="COD_DEPA" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="COD_ADIC" Type="char" MaxLength="40" />
+    <Property Name="NOMBRE_1" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="NOMBRE_2" Type="varchar" MaxLength="330" />
+    <Property Name="LOCALIZACION" Type="char" MaxLength="10" />
+    <Property Name="UNI_MED" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="VOLUMEN" Type="numeric" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="PESO" Type="numeric" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="ULTIMO_D" Type="datetime" />
+    <Property Name="ULTIMO_H" Type="datetime" />
+    <Property Name="IMP_1" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IMP_2" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IMP_3" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IMP_4" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CUENTA_D" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="CUENTA_H" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ACTIVO" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DESC_MAX" Type="money" Nullable="false" />
+    <Property Name="UTIL_MIN" Type="money" Nullable="false" />
+    <Property Name="UTIL_P1" Type="money" Nullable="false" />
+    <Property Name="UTIL_P2" Type="money" Nullable="false" />
+    <Property Name="UTIL_P3" Type="money" Nullable="false" />
+    <Property Name="UTIL_P4" Type="money" Nullable="false" />
+    <Property Name="UTIL_P5" Type="money" Nullable="false" />
+    <Property Name="UTIL_P6" Type="money" Nullable="false" />
+    <Property Name="UTIL_P7" Type="money" Nullable="false" />
+    <Property Name="UTIL_P8" Type="money" Nullable="false" />
+    <Property Name="UTIL_P9" Type="money" Nullable="false" />
+    <Property Name="PRECIO_1" Type="money" Nullable="false" />
+    <Property Name="PRECIO_2" Type="money" Nullable="false" />
+    <Property Name="PRECIO_3" Type="money" Nullable="false" />
+    <Property Name="PRECIO_4" Type="money" Nullable="false" />
+    <Property Name="PRECIO_5" Type="money" Nullable="false" />
+    <Property Name="PRECIO_6" Type="money" Nullable="false" />
+    <Property Name="PRECIO_7" Type="money" Nullable="false" />
+    <Property Name="PRECIO_8" Type="money" Nullable="false" />
+    <Property Name="PRECIO_9" Type="money" />
+    <Property Name="MINIMO" Type="money" />
+    <Property Name="MAXIMO" Type="money" />
+    <Property Name="PEDIDOS" Type="money" />
+    <Property Name="COMPRAS" Type="money" />
+    <Property Name="ULTIMO_L" Type="money" />
+    <Property Name="ULTIMO_E" Type="money" />
+    <Property Name="SERIE" Type="char" MaxLength="1" />
+    <Property Name="GARANTIA" Type="char" MaxLength="1" />
+    <Property Name="MESES_GARANTIA" Type="int" />
+    <Property Name="ULT_COD_PROV" Type="char" MaxLength="5" />
+    <Property Name="CANTIDAD_DIAS" Type="int" />
+    <Property Name="LOCALIZACION_2" Type="char" MaxLength="10" />
+    <Property Name="PROMOCION" Type="char" MaxLength="1" />
+    <Property Name="DESC_PROM" Type="money" />
+    <Property Name="PROM_DEL" Type="datetime" />
+    <Property Name="PROM_AL" Type="datetime" />
+    <Property Name="IMP_PART" Type="char" MaxLength="30" />
+    <Property Name="PRODUCIR_1" Type="money" />
+    <Property Name="PRODUCIR_2" Type="money" />
+    <Property Name="PRODUCIR_3" Type="money" />
+    <Property Name="COD_UBIC" Type="char" MaxLength="10" />
+    <Property Name="PEDIR" Type="char" MaxLength="1" />
+    <Property Name="ULTIMO_FOB" Type="money" />
+    <Property Name="COD_BARRAS" Type="char" MaxLength="30" />
+    <Property Name="NOTAS" Type="char" MaxLength="70" />
+    <Property Name="ID_ABC" Type="char" MaxLength="1" />
+    <Property Name="ID_INDICADOR" Type="char" MaxLength="1" />
+    <Property Name="FOTO" Type="varchar" MaxLength="500" />
+    <Property Name="COMPRAS_MOVIL" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="COMISION" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="INV_TECN">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="COD_TECN" />
+    </Key>
+    <Property Name="CIA" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="COD_TECN" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="DES_TECN" Type="char" MaxLength="50" />
+    <Property Name="POR_COMI" Type="money" />
+  </EntityType>
+  <EntityType Name="SGA_AFILIADOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="N_AFILIADO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DIRECCION_1" Type="varchar" MaxLength="500" />
+    <Property Name="DIRECCION_2" Type="varchar" MaxLength="500" />
+    <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="100" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="100" />
+    <Property Name="N_COD_PROV" Type="varchar" MaxLength="1" />
+    <Property Name="N_COD_CANT" Type="varchar" MaxLength="2" />
+    <Property Name="N_COD_DIST" Type="varchar" MaxLength="2" />
+    <Property Name="ACTUALIZADO" Type="bit" />
+    <Property Name="ACTIVO" Type="bit" />
+    <Property Name="ANTIGUO_N_AFILIADO" Type="varchar" MaxLength="50" />
+    <Property Name="FECHA_CREACION" Type="datetime" />
+    <Property Name="EXTRA_1" Type="varchar" MaxLength="50" />
+    <Property Name="EXTRA_2" Type="varchar" MaxLength="150" />
+    <Property Name="FECHA_INACTIVACION" Type="datetime" />
+    <Property Name="INVENTARIO_ACTUALIZADO" Type="bit" />
+    <Property Name="ESTATUS" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="SGA_BITACORA_SERIE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SERIAL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+    <Property Name="DETALLE" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="RESPONSABLE" Type="varchar" MaxLength="50" />
+    <Property Name="NUM_TICKET" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SGA_BITACORA_TICKET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TICKET" Type="varchar" MaxLength="15" />
+    <Property Name="TIPO_MOVIMIENTO" Type="char" MaxLength="1" />
+    <Property Name="AVERIA_REPORTADA" Type="varchar" MaxLength="1000" />
+    <Property Name="DIAGNOSTICO" Type="varchar" MaxLength="1000" />
+    <Property Name="SOLUCION" Type="varchar" MaxLength="1000" />
+    <Property Name="EXPOSICION_EQUIPO" Type="varchar" MaxLength="50" />
+    <Property Name="EXPOSICION_EQUIPO_2" Type="varchar" MaxLength="50" />
+    <Property Name="MANTENIMIENTO" Type="varchar" MaxLength="50" />
+    <Property Name="PRUEBAS" Type="varchar" MaxLength="50" />
+    <Property Name="TIPO_CONEXION" Type="varchar" MaxLength="50" />
+    <Property Name="DETALLE_INSTALACION" Type="varchar" MaxLength="50" />
+    <Property Name="EXPOSICION_EQUIPO_VISITA" Type="varchar" MaxLength="50" />
+    <Property Name="OTROS" Type="varchar" MaxLength="1000" />
+    <Property Name="FECHA_DIG" Type="datetime" />
+    <Property Name="EXTRA_1" Type="varchar" MaxLength="1000" />
+    <Property Name="EXTRA_2" Type="varchar" MaxLength="1000" />
+    <Property Name="EXTRA_3" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="SGA_CAMBIO_AFILIADO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ANTIGUO_AFILIADO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NUEVO_AFILIADO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DETALLE" Type="varchar" MaxLength="250" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+    <Property Name="AFILIADO_INICIAL" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SGA_CATEGORY_PRODUCT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_CATEGORIA" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="SGA_ESTADO_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="SERIE_CONSECUTIVO" />
+      <PropertyRef Name="COD_PROD" />
+      <PropertyRef Name="ID_BOLETA" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SERIE_CONSECUTIVO" Type="int" Nullable="false" />
+    <Property Name="COD_PROD" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID_BOLETA" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="200" />
+    <Property Name="FECHA" Type="datetime" />
+    <Property Name="ACCION" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SGA_EVIDENCIA_TICKET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="500" />
+    <Property Name="PATH" Type="varchar" MaxLength="1000" />
+    <Property Name="EXTENSION" Type="varchar" MaxLength="50" />
+    <Property Name="MEMBERSHIP_ID" Type="varchar" MaxLength="100" />
+    <Property Name="ID_TICKET" Type="varchar" MaxLength="100" />
+    <Property Name="DATE" Type="datetime" />
+    <Property Name="ACTIVE" Type="bit" />
+    <Property Name="UPDATED" Type="datetime" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SGA_EXEPCIONES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MODULO" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="DETALLE" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="USUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SGA_PERMISOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDENTIFICADOR" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CATEGORIA" Type="int" />
+  </EntityType>
+  <EntityType Name="SGA_ROLES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_ROL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PERMANENTE" Type="bit" />
+  </EntityType>
+  <EntityType Name="SGA_ROLES_PERMISOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PERMISO" Type="int" Nullable="false" />
+    <Property Name="ID_ROL" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SGA_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="APELLIDO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USER_LOGIN" Type="varchar" MaxLength="50" />
+    <Property Name="CONTRASENA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FECHA_REGISTRO" Type="datetime" Nullable="false" />
+    <Property Name="ROL" Type="int" Nullable="false" />
+    <Property Name="ACTIVO" Type="bit" Nullable="false" />
+    <Property Name="COD_TECNICO" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WEB_Canton">
+    <Key>
+      <PropertyRef Name="idProvincia" />
+      <PropertyRef Name="idCanton" />
+    </Key>
+    <Property Name="idProvincia" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="idCanton" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="nombreCanton" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="WEB_Distrito">
+    <Key>
+      <PropertyRef Name="idCanton" />
+      <PropertyRef Name="idDistrito" />
+    </Key>
+    <Property Name="idProvincia" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="idCanton" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="idDistrito" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="nombreDistrito" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="WEB_Provincia">
+    <Key>
+      <PropertyRef Name="idProvincia" />
+    </Key>
+    <Property Name="idProvincia" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="nombreProvincia" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_SGA_ROLES_PERMISOS_SGA_PERMISOS">
+    <End Role="SGA_ROLES" Type="Self.SGA_ROLES" Multiplicity="1" />
+    <End Role="SGA_ROLES_PERMISOS" Type="Self.SGA_ROLES_PERMISOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_ROLES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SGA_ROLES_PERMISOS">
+        <PropertyRef Name="ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SGA_ROLES_PERMISOS_SGA_PERMISOS1">
+    <End Role="SGA_PERMISOS" Type="Self.SGA_PERMISOS" Multiplicity="1" />
+    <End Role="SGA_ROLES_PERMISOS" Type="Self.SGA_ROLES_PERMISOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_PERMISOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SGA_ROLES_PERMISOS">
+        <PropertyRef Name="ID_PERMISO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SGA_USUARIOS_SGA_ROLES">
+    <End Role="SGA_ROLES" Type="Self.SGA_ROLES" Multiplicity="1" />
+    <End Role="SGA_USUARIOS" Type="Self.SGA_USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SGA_ROLES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SGA_USUARIOS">
+        <PropertyRef Name="ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="F_AFILIADOS_INSTALACIONES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="F_INICIO" Type="datetime" Mode="In" />
+    <Parameter Name="F_FIN" Type="datetime" Mode="In" />
+    <Parameter Name="STATUS" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="COMERCIO" Type="varchar" MaxLength="500" />
+          <Property Name="AFILIADO" Type="varchar" MaxLength="50" />
+          <Property Name="CONTACTO" Type="varchar" MaxLength="500" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="PROVINCIA" Type="varchar" MaxLength="50" />
+          <Property Name="AREA" Type="varchar" MaxLength="50" />
+          <Property Name="EJECUTIVO" Type="varchar" MaxLength="50" />
+          <Property Name="TIPO_SOF" Type="varchar" MaxLength="50" />
+          <Property Name="TIPO_INDU" Type="varchar" MaxLength="50" />
+          <Property Name="LICENCIA" Type="varchar" MaxLength="500" />
+          <Property Name="FEC_INSTA" Type="datetime" />
+          <Property Name="FEC_COMP" Type="datetime" />
+          <Property Name="PAGO_MEN" Type="varchar" MaxLength="500" />
+          <Property Name="MOT_RETIRO" Type="varchar" MaxLength="500" />
+          <Property Name="FEC_RETIRO" Type="datetime" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="1000" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_BUSQUEDA_AFILIADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BUSQUEDA" Type="varchar" Mode="In" />
+    <Parameter Name="PARAMETRO" Type="varchar" Mode="In" />
+    <Parameter Name="ESTATUS" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" />
+          <Property Name="N_AFILIADO" Type="varchar" MaxLength="50" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+          <Property Name="DIRECCION_1" Type="varchar" MaxLength="500" />
+          <Property Name="DIRECCION_2" Type="varchar" MaxLength="500" />
+          <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="100" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="50" />
+          <Property Name="N_COD_PROV" Type="varchar" MaxLength="50" />
+          <Property Name="N_COD_CANT" Type="varchar" MaxLength="50" />
+          <Property Name="N_COD_DIST" Type="varchar" MaxLength="50" />
+          <Property Name="ACTUALIZADO" Type="bit" />
+          <Property Name="ACTIVO" Type="bit" />
+          <Property Name="ACTIVO_V" Type="varchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_BUSQUEDA_SERIE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BUSQUEDA" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="CONSECUTIVO" Type="varchar" MaxLength="50" />
+          <Property Name="SERIE" Type="varchar" MaxLength="100" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="50" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="100" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_BUSQUEDA_TICKET" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BUSQUEDA" Type="varchar" Mode="In" />
+    <Parameter Name="PARAMETRO" Type="varchar" Mode="In" />
+    <Parameter Name="ESTATUS" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="varchar" MaxLength="20" />
+          <Property Name="TIPO" Type="varchar" MaxLength="20" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="250" />
+          <Property Name="TECNICO" Type="varchar" MaxLength="250" />
+          <Property Name="N_AFILIADO" Type="varchar" MaxLength="250" />
+          <Property Name="CONTACTO" Type="varchar" MaxLength="250" />
+          <Property Name="LOCAL_N" Type="varchar" MaxLength="2150" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="250" />
+          <Property Name="PROBLEMA" Type="varchar" MaxLength="500" />
+          <Property Name="DIA_VISITA" Type="datetime" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_HISTORIAL_SERIE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SERIAL" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MOVIMIENTO" Type="varchar" MaxLength="100" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="RESPONSABLE" Type="varchar" MaxLength="100" />
+          <Property Name="DETALLE" Type="varchar" MaxLength="300" />
+          <Property Name="TIQUETE" Type="varchar" MaxLength="200" />
+          <Property Name="NOTAS" Type="varchar" MaxLength="500" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_INVENTARIO_AFILIADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="n_afiliado" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" />
+          <Property Name="COD_PROD" Type="varchar" MaxLength="30" />
+          <Property Name="COD_TIPO" Type="varchar" MaxLength="2" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" />
+          <Property Name="SERIE" Type="varchar" MaxLength="30" />
+          <Property Name="CATEGORIA" Type="varchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_INVENTARIO_CREDOMATIC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MES" Type="varchar" Mode="In" />
+    <Parameter Name="ANO" Type="varchar" Mode="In" />
+    <Parameter Name="PARAMETRO" Type="varchar" Mode="In" />
+    <Parameter Name="P_CONSULTA" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="COD_PROD" Type="varchar" MaxLength="50" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="1000" />
+          <Property Name="COMPRADOS" Type="int" />
+          <Property Name="INSTALADOS" Type="int" />
+          <Property Name="RETIRADOS" Type="int" />
+          <Property Name="DESECHADO" Type="int" />
+          <Property Name="REACONDI" Type="int" />
+          <Property Name="SALDO_INI" Type="int" />
+          <Property Name="SALDO_FIN" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_MOVIMIENTOS_POR_PRODUCTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CIA" Type="varchar" Mode="In" />
+    <Parameter Name="F_INICIO" Type="datetime" Mode="In" />
+    <Parameter Name="F_FIN" Type="datetime" Mode="In" />
+    <Parameter Name="CATEGORIA" Type="varchar" Mode="In" />
+    <Parameter Name="MOVIMIENTO" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="FECHA_MOVI" Type="datetime" />
+          <Property Name="NEGOCIO" Type="varchar" MaxLength="500" />
+          <Property Name="AFILIADO" Type="varchar" MaxLength="50" />
+          <Property Name="TIPO" Type="varchar" MaxLength="100" />
+          <Property Name="COD_PROD" Type="varchar" MaxLength="100" />
+          <Property Name="NUM_DOC" Type="varchar" MaxLength="100" />
+          <Property Name="CATEGORIA" Type="varchar" MaxLength="100" />
+          <Property Name="PRODUCTO" Type="varchar" MaxLength="1000" />
+          <Property Name="SERIE" Type="varchar" MaxLength="500" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_OBTENER_RESUMEN_TICKETS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cod_tec" Type="varchar" Mode="In" />
+    <Parameter Name="dias_h" Type="int" Mode="In" />
+    <Parameter Name="parametro" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="DIA" Type="varchar" MaxLength="50" />
+          <Property Name="FECHA" Type="date" />
+          <Property Name="INSTALADO" Type="int" />
+          <Property Name="VISITADO" Type="int" />
+          <Property Name="RETIRADO" Type="int" />
+          <Property Name="TOTAL" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_PRODUCTOS_INSTALADOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="F_INICIO" Type="datetime" Mode="In" />
+    <Parameter Name="F_FIN" Type="datetime" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="REFERENCIA" Type="varchar" MaxLength="10" />
+          <Property Name="SERIE" Type="varchar" MaxLength="50" />
+          <Property Name="CATEGORIA" Type="varchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_REPORTE_MANTENIMIENTO_AFILIADOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="F_INICIO" Type="datetime" Mode="In" />
+    <Parameter Name="F_FIN" Type="datetime" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID_TICKET" Type="varchar" MaxLength="100" />
+          <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="100" />
+          <Property Name="N_AFILIADO" Type="varchar" MaxLength="50" />
+          <Property Name="T_SERVICE" Type="varchar" MaxLength="100" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="200" />
+          <Property Name="FECHA" Type="date" />
+          <Property Name="TECNICO" Type="varchar" MaxLength="100" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_SGA_AFILIADOS_SIN_MANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MESES" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="N_AFILIADO" Type="varchar" MaxLength="50" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="500" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="1000" />
+          <Property Name="NEGOCIO" Type="varchar" MaxLength="500" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="100" />
+          <Property Name="PROVINCIA" Type="varchar" MaxLength="100" />
+          <Property Name="CANTON" Type="varchar" MaxLength="100" />
+          <Property Name="DISTRITO" Type="varchar" MaxLength="100" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_SGA_PRODUCTOS_POR_CLIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" />
+          <Property Name="COD_CLIE" Type="varchar" MaxLength="50" />
+          <Property Name="COD_PROD" Type="varchar" MaxLength="50" />
+          <Property Name="ID_SERIE" Type="varchar" MaxLength="50" />
+          <Property Name="N_SERIE" Type="varchar" MaxLength="50" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="CATEGORIA" Type="varchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="F_TICKETS_AFILIADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="N_AFILIADO2" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="varchar" MaxLength="100" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="100" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="500" />
+          <Property Name="TECNICO" Type="varchar" MaxLength="100" />
+          <Property Name="N_AFILIADO" Type="varchar" MaxLength="100" />
+          <Property Name="CONTACTO" Type="varchar" MaxLength="500" />
+          <Property Name="LOCAL_N" Type="varchar" MaxLength="500" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="100" />
+          <Property Name="PROBLEMA" Type="varchar" MaxLength="500" />
+          <Property Name="PROVINCIA" Type="varchar" MaxLength="50" />
+          <Property Name="CANTON" Type="varchar" MaxLength="50" />
+          <Property Name="DISTRITO" Type="varchar" MaxLength="50" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="1000" />
+          <Property Name="DIA_VISITA" Type="datetime" />
+          <Property Name="TIPO" Type="varchar" MaxLength="100" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="SGA_ACTUALIZAR_ESTATUS_PRODUCTO_AFILIADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="num_afiliado" Type="varchar" Mode="In" />
+    <Parameter Name="serie_consecutivo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SGA_CAMBIAR_AFILIADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OLD_AFILIADO" Type="varchar" Mode="In" />
+    <Parameter Name="N_AFILIADO" Type="varchar" Mode="In" />
+    <Parameter Name="CONTACTO" Type="varchar" Mode="In" />
+    <Parameter Name="COMERCIO" Type="varchar" Mode="In" />
+    <Parameter Name="TELEFONO" Type="varchar" Mode="In" />
+    <Parameter Name="PROVINCIA" Type="varchar" Mode="In" />
+    <Parameter Name="CANTON" Type="varchar" Mode="In" />
+    <Parameter Name="DISTRITO" Type="varchar" Mode="In" />
+    <Parameter Name="DIRECCION" Type="varchar" Mode="In" />
+    <Parameter Name="REFERENCIA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SGA_F_STATUS_SERIES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="serie_validar" Type="varchar" Mode="In" />
+    <Parameter Name="num_ticket" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SGA_STATUS_SERIES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_serie_validar" Type="varchar" Mode="In" />
+    <Parameter Name="p_num_ticket" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="BMS_DATA_DENTModelStoreContainer">
+    <EntitySet Name="INV_GARA" EntityType="Self.INV_GARA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INV_GARV" EntityType="Self.INV_GARV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INV_MOV1" EntityType="Self.INV_MOV1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INV_MOVS" EntityType="Self.INV_MOVS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INV_PROD" EntityType="Self.INV_PROD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INV_TECN" EntityType="Self.INV_TECN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_AFILIADOS" EntityType="Self.SGA_AFILIADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_BITACORA_SERIE" EntityType="Self.SGA_BITACORA_SERIE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_BITACORA_TICKET" EntityType="Self.SGA_BITACORA_TICKET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_CAMBIO_AFILIADO" EntityType="Self.SGA_CAMBIO_AFILIADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_CATEGORY_PRODUCT" EntityType="Self.SGA_CATEGORY_PRODUCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_ESTADO_PRODUCTOS" EntityType="Self.SGA_ESTADO_PRODUCTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_EVIDENCIA_TICKET" EntityType="Self.SGA_EVIDENCIA_TICKET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_EXEPCIONES" EntityType="Self.SGA_EXEPCIONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_PERMISOS" EntityType="Self.SGA_PERMISOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_ROLES" EntityType="Self.SGA_ROLES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_ROLES_PERMISOS" EntityType="Self.SGA_ROLES_PERMISOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SGA_USUARIOS" EntityType="Self.SGA_USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_Canton" EntityType="Self.WEB_Canton" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_Distrito" EntityType="Self.WEB_Distrito" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_Provincia" EntityType="Self.WEB_Provincia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INV_DANOS" EntityType="Self.INV_DANOS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [INV_DANOS].[ID] AS [ID], 
+    [INV_DANOS].[CIA] AS [CIA], 
+    [INV_DANOS].[Descripcion] AS [Descripcion]
+    FROM [dbo].[INV_DANOS] AS [INV_DANOS]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_SGA_ROLES_PERMISOS_SGA_PERMISOS" Association="Self.FK_SGA_ROLES_PERMISOS_SGA_PERMISOS">
+      <End Role="SGA_ROLES" EntitySet="SGA_ROLES" />
+      <End Role="SGA_ROLES_PERMISOS" EntitySet="SGA_ROLES_PERMISOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SGA_ROLES_PERMISOS_SGA_PERMISOS1" Association="Self.FK_SGA_ROLES_PERMISOS_SGA_PERMISOS1">
+      <End Role="SGA_PERMISOS" EntitySet="SGA_PERMISOS" />
+      <End Role="SGA_ROLES_PERMISOS" EntitySet="SGA_ROLES_PERMISOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SGA_USUARIOS_SGA_ROLES" Association="Self.FK_SGA_USUARIOS_SGA_ROLES">
+      <End Role="SGA_ROLES" EntitySet="SGA_ROLES" />
+      <End Role="SGA_USUARIOS" EntitySet="SGA_USUARIOS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

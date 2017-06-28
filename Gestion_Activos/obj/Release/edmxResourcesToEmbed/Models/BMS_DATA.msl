@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BMS_DATA_DENTModelStoreContainer" CdmEntityContainer="BMS_DATA_DENTEntities">
+    <EntitySetMapping Name="INV_GARA">
+      <EntityTypeMapping TypeName="BMS_DATA_DENTModel.INV_GARA">
+        <MappingFragment StoreEntitySet="INV_GARA">
+          <ScalarProperty Name="CIA" ColumnName="CIA" />
+          <ScalarProperty Name="NUM_DOC_GARANTIA" ColumnName="NUM_DOC_GARANTIA" />
+          <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+          <ScalarProperty Name="TIPO_GARANTIA" ColumnName="TIPO_GARANTIA" />
+          <ScalarProperty Name="COD_CLIE" ColumnName="COD_CLIE" />
+          <ScalarProperty Name="NOTA_1" ColumnName="NOTA_1" />
+          <ScalarProperty Name="CODIGO_BOLETA" ColumnName="CODIGO_BOLETA" />
+          <ScalarProperty Name="TECNICO" ColumnName="TECNICO" />
+          <ScalarProperty Name="FECHA_ENTREGA" ColumnName="FECHA_ENTREGA" />
+          <ScalarProperty Name="PROBLEMA_1" ColumnName="PROBLEMA_1" />
+          <ScalarProperty Name="PROBLEMA_2" ColumnName="PROBLEMA_2" />
+          <ScalarProperty Name="PROBLEMA_3" ColumnName="PROBLEMA_3" />
+          <ScalarProperty Name="PROBLEMA_4" ColumnName="PROBLEMA_4" />
+          <ScalarProperty Name="SOLUCION_1" ColumnName="SOLUCION_1" />
+          <ScalarProperty Name="SOLUCION_2" ColumnName="SOLUCION_2" />
+          <ScalarProperty Name="SOLUCION_3" ColumnName="SOLUCION_3" />
+          <ScalarProperty Name="SOLUCION_4" ColumnName="SOLUCION_4" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="RMA" ColumnName="RMA" />
+          <ScalarProperty Name="CONTACTO" ColumnName="CONTACTO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="HORA" ColumnName="HORA" />
+          <ScalarProperty Name="FECHA_REPARADO" ColumnName="FECHA_REPARADO" />
+          <ScalarProperty Name="RECIBE" ColumnName="RECIBE" />
+          <ScalarProperty Name="ORDEN_COMPRA" ColumnName="ORDEN_COMPRA" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="FACTURADO" ColumnName="FACTURADO" />
+          <ScalarProperty Name="FACTURA" ColumnName="FACTURA" />
+          <ScalarProperty Name="MANO_OBRA" ColumnName="MANO_OBRA" />
+          <ScalarProperty Name="MATERIALES" ColumnName="MATERIALES" />
+          <ScalarProperty Name="N_COORDINA" ColumnName="N_COORDINA" />
+          <ScalarProperty Name="N_EJECUTIVO" ColumnName="N_EJECUTIVO" />
+          <ScalarProperty Name="N_AFILIADO" ColumnName="N_AFILIADO" />
+          <ScalarProperty Name="N_CLIENTE" ColumnName="N_CLIENTE" />
+          <ScalarProperty Name="N_DIRECCION" ColumnName="N_DIRECCION" />
+          <ScalarProperty Name="N_HORA_P" ColumnName="N_HORA_P" />
+          <ScalarProperty Name="N_FECHA_P" ColumnName="N_FECHA_P" />
+          <ScalarProperty Name="N_CANTIDAD" ColumnName="N_CANTIDAD" />
+          <ScalarProperty Name="N_TECNICO" ColumnName="N_TECNICO" />
+          <ScalarProperty Name="N_TIPO" ColumnName="N_TIPO" />
+          <ScalarProperty Name="N_INTERNET" ColumnName="N_INTERNET" />
+          <ScalarProperty Name="N_MUEBLE" ColumnName="N_MUEBLE" />
+          <ScalarProperty Name="N_ELECTRICIDAD" ColumnName="N_ELECTRICIDAD" />
+          <ScalarProperty Name="N_COD_PROV" ColumnName="N_COD_PROV" />
+          <ScalarProperty Name="N_COD_CANT" ColumnName="N_COD_CANT" />
+          <ScalarProperty Name="N_COD_DIST" ColumnName="N_COD_DIST" />
+          <ScalarProperty Name="TIPO_EVENTO" ColumnName="TIPO_EVENTO" />
+          <ScalarProperty Name="FECHA_DIAGNOSTICADO" ColumnName="FECHA_DIAGNOSTICADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INV_MOV1">
+      <EntityTypeMapping TypeName="BMS_DATA_DENTModel.INV_MOV1">
+        <MappingFragment StoreEntitySet="INV_MOV1">
+          <ScalarProperty Name="CIA" ColumnName="CIA" />
+          <ScalarProperty Name="MES_PROC" ColumnName="MES_PROC" />
+          <ScalarProperty Name="ANO_PROC" ColumnName="ANO_PROC" />
+          <ScalarProperty Name="COD_TIPO" ColumnName="COD_TIPO" />
+          <ScalarProperty Name="NUM_DOC" ColumnName="NUM_DOC" />
+          <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="FECHA_DIG" ColumnName="FECHA_DIG" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="COD_AUX1" ColumnName="COD_AUX1" />
+          <ScalarProperty Name="COD_AUX2" ColumnName="COD_AUX2" />
+          <ScalarProperty Name="SISTEMA" ColumnName="SISTEMA" />
+          <ScalarProperty Name="CAMBIO" ColumnName="CAMBIO" />
+          <ScalarProperty Name="COSTO_L" ColumnName="COSTO_L" />
+          <ScalarProperty Name="COSTO_E" ColumnName="COSTO_E" />
+          <ScalarProperty Name="BRUTO" ColumnName="BRUTO" />
+          <ScalarProperty Name="BRUTO_EX" ColumnName="BRUTO_EX" />
+          <ScalarProperty Name="BRUTO_GR" ColumnName="BRUTO_GR" />
+          <ScalarProperty Name="IMP_1" ColumnName="IMP_1" />
+          <ScalarProperty Name="IMP_2" ColumnName="IMP_2" />
+          <ScalarProperty Name="IMP_3" ColumnName="IMP_3" />
+          <ScalarProperty Name="IMP_4" ColumnName="IMP_4" />
+          <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+          <ScalarProperty Name="DESCUENTO_EX" ColumnName="DESCUENTO_EX" />
+          <ScalarProperty Name="DESCUENTO_GR" ColumnName="DESCUENTO_GR" />
+          <ScalarProperty Name="NETO" ColumnName="NETO" />
+          <ScalarProperty Name="NETO_EX" ColumnName="NETO_EX" />
+          <ScalarProperty Name="NETO_GR" ColumnName="NETO_GR" />
+          <ScalarProperty Name="NULO" ColumnName="NULO" />
+          <ScalarProperty Name="NOTAS" ColumnName="NOTAS" />
+          <ScalarProperty Name="CIA_CXP" ColumnName="CIA_CXP" />
+          <ScalarProperty Name="COD_PROV" ColumnName="COD_PROV" />
+          <ScalarProperty Name="TIPO_CREDITO" ColumnName="TIPO_CREDITO" />
+          <ScalarProperty Name="F_VENCE" ColumnName="F_VENCE" />
+          <ScalarProperty Name="REFERENCIA" ColumnName="REFERENCIA" />
+          <ScalarProperty Name="ADI1" ColumnName="ADI1" />
+          <ScalarProperty Name="ADI2" ColumnName="ADI2" />
+          <ScalarProperty Name="ADI3" ColumnName="ADI3" />
+          <ScalarProperty Name="ADI4" ColumnName="ADI4" />
+          <ScalarProperty Name="ADI5" ColumnName="ADI5" />
+          <ScalarProperty Name="ADI6" ColumnName="ADI6" />
+          <ScalarProperty Name="ADI7" ColumnName="ADI7" />
+          <ScalarProperty Name="ADI8" ColumnName="ADI8" />
+          <ScalarProperty Name="ADI9" ColumnName="ADI9" />
+          <ScalarProperty Name="ADI10" ColumnName="ADI10" />
+          <ScalarProperty Name="ADI11" ColumnName="ADI11" />
+          <ScalarProperty Name="COD_VEND" ColumnName="COD_VEND" />
+          <ScalarProperty Name="COD_RUTA" ColumnName="COD_RUTA" />
+          <ScalarProperty Name="NIVEL_PRECIO" ColumnName="NIVEL_PRECIO" />
+          <ScalarProperty Name="COD_FPAG" ColumnName="COD_FPAG" />
+          <ScalarProperty Name="CIA_FAC" ColumnName="CIA_FAC" />
+          <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+          <ScalarProperty Name="MONEDA" ColumnName="MONEDA" />
+          <ScalarProperty Name="IMPRIMIR_SERV" ColumnName="IMPRIMIR_SERV" />
+          <ScalarProperty Name="CONFIRMADO" ColumnName="CONFIRMADO" />
+          <ScalarProperty Name="USER_CONFIRMA" ColumnName="USER_CONFIRMA" />
+          <ScalarProperty Name="DIA_CONFIRMA" ColumnName="DIA_CONFIRMA" />
+          <ScalarProperty Name="STATUS_ENT" ColumnName="STATUS_ENT" />
+          <ScalarProperty Name="MOTIVO" ColumnName="MOTIVO" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INV_SERI">
+      <EntityTypeMapping TypeName="BMS_DATA_DENTModel.INV_SERI">
+        <MappingFragment StoreEntitySet="INV_SERI">
+          <ScalarProperty Name="CIA" ColumnName="CIA" />
+          <ScalarProperty Name="SERIE_1" ColumnName="SERIE_1" />
+          <ScalarProperty Name="SERIE_2" ColumnName="SERIE_2" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="COD_PROD" ColumnName="COD_PROD" />
+          <ScalarProperty Name="COD_PROV" ColumnName="COD_PROV" />
+          <ScalarProperty Name="NUM_DOC_COM" ColumnName="NUM_DOC_COM" />
+          <ScalarProperty Name="SECUENCIA" ColumnName="SECUENCIA" />
+          <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+          <ScalarProperty Name="COD_EMBARQUE" ColumnName="COD_EMBARQUE" />
+          <ScalarProperty Name="FECHA_COM" ColumnName="FECHA_COM" />
+          <ScalarProperty Name="COD_CLIE" ColumnName="COD_CLIE" />
+          <ScalarProperty Name="NUM_DOC_VTA" ColumnName="NUM_DOC_VTA" />
+          <ScalarProperty Name="TIPO_DOC_VTA" ColumnName="TIPO_DOC_VTA" />
+          <ScalarProperty Name="FECHA_VTA" ColumnName="FECHA_VTA" />
+          <ScalarProperty Name="FECHA_VENCE" ColumnName="FECHA_VENCE" />
+          <ScalarProperty Name="NUM_DOC_DEV" ColumnName="NUM_DOC_DEV" />
+          <ScalarProperty Name="FECHA_DEV" ColumnName="FECHA_DEV" />
+          <ScalarProperty Name="FECHA_REENVIO" ColumnName="FECHA_REENVIO" />
+          <ScalarProperty Name="NUM_DOC_REENVIO" ColumnName="NUM_DOC_REENVIO" />
+          <ScalarProperty Name="CANT_DEVO" ColumnName="CANT_DEVO" />
+          <ScalarProperty Name="NUM_DOC_GARANTIA" ColumnName="NUM_DOC_GARANTIA" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="COSTO" ColumnName="COSTO" />
+          <ScalarProperty Name="VENTA" ColumnName="VENTA" />
+          <ScalarProperty Name="NUM_PEDIDO" ColumnName="NUM_PEDIDO" />
+          <ScalarProperty Name="CODIGO_BOLETA" ColumnName="CODIGO_BOLETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

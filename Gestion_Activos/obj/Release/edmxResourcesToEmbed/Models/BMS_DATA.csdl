@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BMS_DATA_DENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="INV_GARA">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="NUM_DOC_GARANTIA" />
+      <PropertyRef Name="CODIGO_BOLETA" />
+    </Key>
+    <Property Name="CIA" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NUM_DOC_GARANTIA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_INGRESO" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TIPO_GARANTIA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COD_CLIE" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NOTA_1" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="CODIGO_BOLETA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TECNICO" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_ENTREGA" Type="DateTime" Precision="3" />
+    <Property Name="PROBLEMA_1" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="PROBLEMA_2" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="PROBLEMA_3" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="PROBLEMA_4" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="SOLUCION_1" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="SOLUCION_2" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="SOLUCION_3" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="SOLUCION_4" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RMA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CONTACTO" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="HORA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="FECHA_REPARADO" Type="DateTime" Precision="3" />
+    <Property Name="RECIBE" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="ORDEN_COMPRA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="USUARIO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="FACTURADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FACTURA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="MANO_OBRA" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MATERIALES" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="N_COORDINA" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="N_EJECUTIVO" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="N_AFILIADO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="N_CLIENTE" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="N_DIRECCION" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+    <Property Name="N_HORA_P" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="N_FECHA_P" Type="DateTime" Precision="3" />
+    <Property Name="N_CANTIDAD" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="N_TECNICO" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="N_TIPO" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+    <Property Name="N_INTERNET" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="N_MUEBLE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="N_ELECTRICIDAD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="N_COD_PROV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="N_COD_CANT" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="N_COD_DIST" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="TIPO_EVENTO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FECHA_DIAGNOSTICADO" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="INV_MOV1">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="COD_TIPO" />
+      <PropertyRef Name="NUM_DOC" />
+    </Key>
+    <Property Name="CIA" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MES_PROC" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ANO_PROC" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="COD_TIPO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NUM_DOC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CONSECUTIVO" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FECHA_DIG" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COD_AUX1" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="COD_AUX2" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SISTEMA" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CAMBIO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="COSTO_L" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="COSTO_E" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BRUTO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BRUTO_EX" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BRUTO_GR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IMP_1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IMP_2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IMP_3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IMP_4" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DESCUENTO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DESCUENTO_EX" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DESCUENTO_GR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NETO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NETO_EX" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NETO_GR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NULO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NOTAS" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="CIA_CXP" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="COD_PROV" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="TIPO_CREDITO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="F_VENCE" Type="DateTime" Precision="3" />
+    <Property Name="REFERENCIA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="ADI1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ADI2" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ADI3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ADI4" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="ADI5" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="ADI6" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="ADI7" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="ADI8" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="ADI9" Type="DateTime" Precision="3" />
+    <Property Name="ADI10" Type="DateTime" Precision="3" />
+    <Property Name="ADI11" Type="DateTime" Precision="3" />
+    <Property Name="COD_VEND" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="COD_RUTA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="NIVEL_PRECIO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COD_FPAG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CIA_FAC" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="DETALLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MONEDA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IMPRIMIR_SERV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CONFIRMADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="USER_CONFIRMA" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="DIA_CONFIRMA" Type="DateTime" Precision="3" />
+    <Property Name="STATUS_ENT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MOTIVO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="X" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Y" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="INV_SERI">
+    <Key>
+      <PropertyRef Name="CIA" />
+      <PropertyRef Name="SERIE_1" />
+      <PropertyRef Name="SERIE_2" />
+      <PropertyRef Name="COD_PROD" />
+      <PropertyRef Name="COD_PROV" />
+      <PropertyRef Name="NUM_DOC_COM" />
+      <PropertyRef Name="SECUENCIA" />
+      <PropertyRef Name="CONSECUTIVO" />
+    </Key>
+    <Property Name="CIA" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SERIE_1" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SERIE_2" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="COD_PROD" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="COD_PROV" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NUM_DOC_COM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SECUENCIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONSECUTIVO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="COD_EMBARQUE" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="FECHA_COM" Type="DateTime" Precision="3" />
+    <Property Name="COD_CLIE" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="NUM_DOC_VTA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="TIPO_DOC_VTA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FECHA_VTA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_VENCE" Type="DateTime" Precision="3" />
+    <Property Name="NUM_DOC_DEV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="FECHA_DEV" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_REENVIO" Type="DateTime" Precision="3" />
+    <Property Name="NUM_DOC_REENVIO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CANT_DEVO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NUM_DOC_GARANTIA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COSTO" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="VENTA" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NUM_PEDIDO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CODIGO_BOLETA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="BMS_DATA_DENTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="INV_GARA" EntityType="Self.INV_GARA" />
+    <EntitySet Name="INV_MOV1" EntityType="Self.INV_MOV1" />
+    <EntitySet Name="INV_SERI" EntityType="Self.INV_SERI" />
+  </EntityContainer>
+</Schema>
