@@ -85,5 +85,6 @@ namespace Gestion_Activos.Models
         public string FOTO { get; set; }
         public Nullable<decimal> COMPRAS_MOVIL { get; set; }
         public string COMISION { get; set; }
+        public string UM_TRIBUTARIA { get; set; }
     }
 }

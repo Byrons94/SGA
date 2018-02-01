@@ -324,5 +324,27 @@ namespace Gestion_Activos.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<F_BUSQUEDA_AFILIADO_Result>("[BMS_DATA_DENTEntities].[F_BUSQUEDA_AFILIADO](@BUSQUEDA, @PARAMETRO, @ESTATUS)", bUSQUEDAParameter, pARAMETROParameter, eSTATUSParameter);
         }
+    
+        [DbFunction("BMS_DATA_DENTEntities", "F_INVENTARIO_CREDOMATIC_TEST")]
+        public virtual IQueryable<F_INVENTARIO_CREDOMATIC_TEST_Result2> F_INVENTARIO_CREDOMATIC_TEST(string mES, string aNO, string pARAMETRO, string p_CONSULTA)
+        {
+            var mESParameter = mES != null ?
+                new ObjectParameter("MES", mES) :
+                new ObjectParameter("MES", typeof(string));
+    
+            var aNOParameter = aNO != null ?
+                new ObjectParameter("ANO", aNO) :
+                new ObjectParameter("ANO", typeof(string));
+    
+            var pARAMETROParameter = pARAMETRO != null ?
+                new ObjectParameter("PARAMETRO", pARAMETRO) :
+                new ObjectParameter("PARAMETRO", typeof(string));
+    
+            var p_CONSULTAParameter = p_CONSULTA != null ?
+                new ObjectParameter("P_CONSULTA", p_CONSULTA) :
+                new ObjectParameter("P_CONSULTA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<F_INVENTARIO_CREDOMATIC_TEST_Result2>("[BMS_DATA_DENTEntities].[F_INVENTARIO_CREDOMATIC_TEST](@MES, @ANO, @PARAMETRO, @P_CONSULTA)", mESParameter, aNOParameter, pARAMETROParameter, p_CONSULTAParameter);
+        }
     }
 }

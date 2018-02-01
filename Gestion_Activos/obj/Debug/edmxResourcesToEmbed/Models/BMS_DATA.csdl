@@ -122,6 +122,7 @@
     <Property Name="MOTIVO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="X" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
     <Property Name="Y" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PLACA" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
   </EntityType>
   <EntityContainer Name="BMS_DATA_DENTEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="INV_GARA" EntityType="Self.INV_GARA" />
@@ -235,6 +236,12 @@
       <Parameter Name="ESTATUS" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="SGA_EVIDENCIA_TICKET" EntityType="BMS_DATA_DENTModel.SGA_EVIDENCIA_TICKET" />
+    <FunctionImport Name="F_INVENTARIO_CREDOMATIC_TEST" IsComposable="true" ReturnType="Collection(BMS_DATA_DENTModel.F_INVENTARIO_CREDOMATIC_TEST_Result2)">
+      <Parameter Name="MES" Mode="In" Type="String" />
+      <Parameter Name="ANO" Mode="In" Type="String" />
+      <Parameter Name="PARAMETRO" Mode="In" Type="String" />
+      <Parameter Name="P_CONSULTA" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="INV_PROD">
     <Key>
@@ -305,13 +312,14 @@
     <Property Name="COD_UBIC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <Property Name="PEDIR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="ULTIMO_FOB" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="COD_BARRAS" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="COD_BARRAS" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
     <Property Name="NOTAS" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
     <Property Name="ID_ABC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="ID_INDICADOR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="FOTO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="COMPRAS_MOVIL" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="COMISION" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UM_TRIBUTARIA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
   </EntityType>
   <EntityType Name="SGA_PERMISOS">
     <Key>
@@ -759,4 +767,56 @@
     <Property Name="UPDATED" Type="DateTime" Precision="3" />
     <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
   </EntityType>
+  <ComplexType Name="F_INVENTARIO_CREDOMATIC_TEST_Result">
+    <Property Type="String" Name="COD_PROD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="COMPRADOS" Nullable="true" />
+    <Property Type="Int32" Name="ENTRADA_TRASPASO" Nullable="true" />
+    <Property Type="Int32" Name="SALIDA_TRASPASO" Nullable="true" />
+    <Property Type="Int32" Name="INSTALADOS" Nullable="true" />
+    <Property Type="Int32" Name="SALIDA_VISITAS" Nullable="true" />
+    <Property Type="Int32" Name="ENTRADA_VISITAS" Nullable="true" />
+    <Property Type="Int32" Name="RETIRADOS" Nullable="true" />
+    <Property Type="Int32" Name="DESECHADO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_BUENO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_MALO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_FALTANTE" Nullable="true" />
+    <Property Type="Int32" Name="SALDO_INI" Nullable="true" />
+    <Property Type="Int32" Name="SALDO_FIN" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="F_INVENTARIO_CREDOMATIC_TEST_Result1">
+    <Property Type="String" Name="COD_PROD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="COMPRADOS" Nullable="true" />
+    <Property Type="Int32" Name="ENTRADA_TRASPASO" Nullable="true" />
+    <Property Type="Int32" Name="SALIDA_TRASPASO" Nullable="true" />
+    <Property Type="Int32" Name="INSTALADOS" Nullable="true" />
+    <Property Type="Int32" Name="SALIDA_VISITAS" Nullable="true" />
+    <Property Type="Int32" Name="ENTRADA_VISITAS" Nullable="true" />
+    <Property Type="Int32" Name="RETIRADOS" Nullable="true" />
+    <Property Type="Int32" Name="DESECHADO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_BUENO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_DESECHADO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_FALTANTE" Nullable="true" />
+    <Property Type="Int32" Name="SALDO_INI" Nullable="true" />
+    <Property Type="Int32" Name="SALDO_FIN" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="F_INVENTARIO_CREDOMATIC_TEST_Result2">
+    <Property Type="String" Name="COD_PROD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="COMPRADOS" Nullable="true" />
+    <Property Type="Int32" Name="ENTRADA_TRASPASO" Nullable="true" />
+    <Property Type="Int32" Name="SALIDA_TRASPASO" Nullable="true" />
+    <Property Type="Int32" Name="INSTALADOS" Nullable="true" />
+    <Property Type="Int32" Name="SALIDA_VISITAS" Nullable="true" />
+    <Property Type="Int32" Name="ENTRADA_VISITAS" Nullable="true" />
+    <Property Type="Int32" Name="RETIRADOS" Nullable="true" />
+    <Property Type="Int32" Name="DESECHADO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_BUENO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_DESECHADO" Nullable="true" />
+    <Property Type="Int32" Name="REACONDICIONAMIENTO_FALTANTE" Nullable="true" />
+    <Property Type="Int32" Name="RETIRO_TRANSITO" Nullable="true" />
+    <Property Type="Int32" Name="SALDO_INI" Nullable="true" />
+    <Property Type="Int32" Name="SALDO_FIN" Nullable="true" />
+  </ComplexType>
 </Schema>

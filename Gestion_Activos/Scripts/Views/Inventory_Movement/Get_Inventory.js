@@ -76,10 +76,15 @@ function update_dataTable(jsonresult){
             { data: "description" },
             { data: "balance_start", "sClass": " text-center" },
             { data: "bought", "sClass": " text-center" },
+            { data: "transfer_entry", "sClass": " text-center" },
+            { data: "transfer_egress", "sClass": " text-center" },
             { data: "installed", "sClass": " text-center" },
+            { data: "visit_egress", "sClass": " text-center" },
+            { data: "visit_entry", "sClass": " text-center" },
             { data: "retired", "sClass": " text-center" },
-            { data: "reconditioned", "sClass": " text-center" },
-            { data: "discarded", "sClass": " text-center" },
+            { data: "retired_in_transit", "sClass": " text-center" },
+            { data: "reconditioned_good", "sClass": " text-center" },
+            { data: "reconditioned_discarted", "sClass": " text-center" },
             { data: "balance_end", "sClass": " text-center" }
         ]
     }).draw();

@@ -78,7 +78,7 @@ namespace Gestion_Activos.Controllers
         private List<Product_Inventory> Get_Inventory_By_Search(string MES = "", string ANO = "", string PARAMETRO="", string P_CONSULTA="")
         {
             BMS_DATA_DENTEntities connection = BDConnection.Get_Connection();
-            var model = (from product in connection.F_INVENTARIO_CREDOMATIC(MES, ANO, PARAMETRO, P_CONSULTA)
+            var model = (from product in connection.F_INVENTARIO_CREDOMATIC_TEST(MES, ANO, PARAMETRO, P_CONSULTA)
                          select new Product_Inventory
                          {
                              cod_prod      = product.COD_PROD,
@@ -86,10 +86,16 @@ namespace Gestion_Activos.Controllers
                              balance_start = product.SALDO_INI.Value,
                              balance_end   = product.SALDO_FIN.Value,
                              bought        = product.COMPRADOS.Value,
+                             transfer_entry = product.ENTRADA_TRASPASO != null ? product.ENTRADA_TRASPASO.Value : 0,
+                             transfer_egress = product.SALIDA_TRASPASO != null ? product.SALIDA_TRASPASO.Value : 0,
+                             installed = product.INSTALADOS.Value,
+                             visit_entry = product.ENTRADA_VISITAS != null ? product.ENTRADA_VISITAS.Value : 0,
+                             visit_egress = product.SALIDA_VISITAS != null ? product.SALIDA_VISITAS.Value : 0,
                              retired       = product.RETIRADOS.Value,
-                             reconditioned = product.REACONDI != null? product.REACONDI.Value : 0,
-                             installed     = product.INSTALADOS.Value,
-                             discarded     = product.DESECHADO.Value
+                             retired_in_transit  = product.RETIRO_TRANSITO != null ? product.RETIRO_TRANSITO.Value : 0,
+                             reconditioned_good = product.REACONDICIONAMIENTO_BUENO != null? product.REACONDICIONAMIENTO_BUENO.Value : 0,
+                             reconditioned_missing = product.REACONDICIONAMIENTO_FALTANTE != null ? product.REACONDICIONAMIENTO_FALTANTE.Value : 0,
+                             reconditioned_discarted     = product.DESECHADO != null ? product.DESECHADO.Value : 0,
                          }).ToList();
             return model;
         } 

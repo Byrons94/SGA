@@ -75,5 +75,6 @@ namespace Gestion_Activos.Models
         public string MOTIVO { get; set; }
         public string X { get; set; }
         public string Y { get; set; }
+        public string PLACA { get; set; }
     }
 }

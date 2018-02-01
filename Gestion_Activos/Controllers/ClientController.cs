@@ -250,7 +250,7 @@ namespace Gestion_Activos.Controllers
             }
         }
            
-        // get the cliets by parameters
+        // get the clients by parameters
         private List<Client> Get_Client_By_Parametres(string BUSQUEDA = "", string PARAMETRO = "", string ESTATUS = "")
         {
             BMS_DATA_DENTEntities connection = BDConnection.Get_Connection();
@@ -527,7 +527,7 @@ namespace Gestion_Activos.Controllers
                          select canton).ToList();
             return model;
         }
-
+        
         private List<WEB_Distrito> Get_Distritos()
         {
             BMS_DATA_DENTEntities connection = BDConnection.Get_Connection();

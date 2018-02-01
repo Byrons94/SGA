@@ -155,6 +155,7 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           <Property Name="MOTIVO" Type="varchar" MaxLength="300" />
           <Property Name="X" Type="char" MaxLength="20" />
           <Property Name="Y" Type="char" MaxLength="20" />
+          <Property Name="PLACA" Type="char" MaxLength="20" />
         </EntityType>
         <EntityType Name="INV_MOVS">
           <Key>
@@ -242,13 +243,14 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           <Property Name="COD_UBIC" Type="char" MaxLength="10" />
           <Property Name="PEDIR" Type="char" MaxLength="1" />
           <Property Name="ULTIMO_FOB" Type="money" />
-          <Property Name="COD_BARRAS" Type="char" MaxLength="30" />
+          <Property Name="COD_BARRAS" Type="char" MaxLength="50" />
           <Property Name="NOTAS" Type="char" MaxLength="70" />
           <Property Name="ID_ABC" Type="char" MaxLength="1" />
           <Property Name="ID_INDICADOR" Type="char" MaxLength="1" />
           <Property Name="FOTO" Type="varchar" MaxLength="500" />
           <Property Name="COMPRAS_MOVIL" Type="decimal" Precision="18" Scale="2" />
           <Property Name="COMISION" Type="char" MaxLength="1" />
+          <Property Name="UM_TRIBUTARIA" Type="char" MaxLength="2" />
         </EntityType>
         <EntityType Name="INV_TECN">
           <Key>
@@ -517,7 +519,7 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
                 <Property Name="DIRECCION_1" Type="varchar" MaxLength="500" />
                 <Property Name="DIRECCION_2" Type="varchar" MaxLength="500" />
                 <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="100" />
-                <Property Name="TELEFONO" Type="varchar" MaxLength="50" />
+                <Property Name="TELEFONO" Type="varchar" MaxLength="500" />
                 <Property Name="N_COD_PROV" Type="varchar" MaxLength="50" />
                 <Property Name="N_COD_CANT" Type="varchar" MaxLength="50" />
                 <Property Name="N_COD_DIST" Type="varchar" MaxLength="50" />
@@ -615,6 +617,34 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="F_INVENTARIO_CREDOMATIC_TEST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MES" Type="varchar" Mode="In" />
+          <Parameter Name="ANO" Type="varchar" Mode="In" />
+          <Parameter Name="PARAMETRO" Type="varchar" Mode="In" />
+          <Parameter Name="P_CONSULTA" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="COD_PROD" Type="varchar" MaxLength="50" />
+                <Property Name="DESCRIPCION" Type="varchar" MaxLength="1000" />
+                <Property Name="COMPRADOS" Type="int" />
+                <Property Name="ENTRADA_TRASPASO" Type="int" />
+                <Property Name="SALIDA_TRASPASO" Type="int" />
+                <Property Name="INSTALADOS" Type="int" />
+                <Property Name="SALIDA_VISITAS" Type="int" />
+                <Property Name="ENTRADA_VISITAS" Type="int" />
+                <Property Name="RETIRADOS" Type="int" />
+                <Property Name="DESECHADO" Type="int" />
+                <Property Name="REACONDICIONAMIENTO_BUENO" Type="int" />
+                <Property Name="REACONDICIONAMIENTO_DESECHADO" Type="int" />
+                <Property Name="REACONDICIONAMIENTO_FALTANTE" Type="int" />
+                <Property Name="RETIRO_TRANSITO" Type="int" />
+                <Property Name="SALDO_INI" Type="int" />
+                <Property Name="SALDO_FIN" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="F_MOVIMIENTOS_POR_PRODUCTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CIA" Type="varchar" Mode="In" />
           <Parameter Name="F_INICIO" Type="datetime" Mode="In" />
@@ -668,18 +698,18 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           </ReturnType>
         </Function>
         <Function Name="F_REPORTE_MANTENIMIENTO_AFILIADOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="F_INICIO" Type="datetime" Mode="In" />
-          <Parameter Name="F_FIN" Type="datetime" Mode="In" />
+          <Parameter Name="F_INICIO" Type="date" Mode="In" />
+          <Parameter Name="F_FIN" Type="date" Mode="In" />
           <ReturnType>
             <CollectionType>
               <RowType>
-                <Property Name="ID_TICKET" Type="varchar" MaxLength="100" />
-                <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="100" />
-                <Property Name="N_AFILIADO" Type="varchar" MaxLength="50" />
-                <Property Name="T_SERVICE" Type="varchar" MaxLength="100" />
-                <Property Name="DIRECCION" Type="varchar" MaxLength="200" />
+                <Property Name="ID_TICKET" Type="varchar" MaxLength="500" />
+                <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="500" />
+                <Property Name="N_AFILIADO" Type="varchar" MaxLength="100" />
+                <Property Name="T_SERVICE" Type="varchar" MaxLength="200" />
+                <Property Name="DIRECCION" Type="varchar" MaxLength="500" />
                 <Property Name="FECHA" Type="date" />
-                <Property Name="TECNICO" Type="varchar" MaxLength="100" />
+                <Property Name="TECNICO" Type="varchar" MaxLength="500" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -933,6 +963,7 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           <Property Name="MOTIVO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="X" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="Y" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PLACA" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityContainer Name="BMS_DATA_DENTEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="INV_GARA" EntityType="Self.INV_GARA" />
@@ -1046,6 +1077,12 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
             <Parameter Name="ESTATUS" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="SGA_EVIDENCIA_TICKET" EntityType="BMS_DATA_DENTModel.SGA_EVIDENCIA_TICKET" />
+          <FunctionImport Name="F_INVENTARIO_CREDOMATIC_TEST" IsComposable="true" ReturnType="Collection(BMS_DATA_DENTModel.F_INVENTARIO_CREDOMATIC_TEST_Result2)">
+            <Parameter Name="MES" Mode="In" Type="String" />
+            <Parameter Name="ANO" Mode="In" Type="String" />
+            <Parameter Name="PARAMETRO" Mode="In" Type="String" />
+            <Parameter Name="P_CONSULTA" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="INV_PROD">
           <Key>
@@ -1116,13 +1153,14 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           <Property Name="COD_UBIC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="PEDIR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="ULTIMO_FOB" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="COD_BARRAS" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="COD_BARRAS" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
           <Property Name="NOTAS" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
           <Property Name="ID_ABC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="ID_INDICADOR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="FOTO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="COMPRAS_MOVIL" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="COMISION" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UM_TRIBUTARIA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
           </EntityType>
         <EntityType Name="SGA_PERMISOS">
           <Key>
@@ -1570,6 +1608,58 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           <Property Name="UPDATED" Type="DateTime" Precision="3" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="F_INVENTARIO_CREDOMATIC_TEST_Result">
+          <Property Type="String" Name="COD_PROD" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="COMPRADOS" Nullable="true" />
+          <Property Type="Int32" Name="ENTRADA_TRASPASO" Nullable="true" />
+          <Property Type="Int32" Name="SALIDA_TRASPASO" Nullable="true" />
+          <Property Type="Int32" Name="INSTALADOS" Nullable="true" />
+          <Property Type="Int32" Name="SALIDA_VISITAS" Nullable="true" />
+          <Property Type="Int32" Name="ENTRADA_VISITAS" Nullable="true" />
+          <Property Type="Int32" Name="RETIRADOS" Nullable="true" />
+          <Property Type="Int32" Name="DESECHADO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_BUENO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_MALO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_FALTANTE" Nullable="true" />
+          <Property Type="Int32" Name="SALDO_INI" Nullable="true" />
+          <Property Type="Int32" Name="SALDO_FIN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="F_INVENTARIO_CREDOMATIC_TEST_Result1">
+          <Property Type="String" Name="COD_PROD" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="COMPRADOS" Nullable="true" />
+          <Property Type="Int32" Name="ENTRADA_TRASPASO" Nullable="true" />
+          <Property Type="Int32" Name="SALIDA_TRASPASO" Nullable="true" />
+          <Property Type="Int32" Name="INSTALADOS" Nullable="true" />
+          <Property Type="Int32" Name="SALIDA_VISITAS" Nullable="true" />
+          <Property Type="Int32" Name="ENTRADA_VISITAS" Nullable="true" />
+          <Property Type="Int32" Name="RETIRADOS" Nullable="true" />
+          <Property Type="Int32" Name="DESECHADO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_BUENO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_DESECHADO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_FALTANTE" Nullable="true" />
+          <Property Type="Int32" Name="SALDO_INI" Nullable="true" />
+          <Property Type="Int32" Name="SALDO_FIN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="F_INVENTARIO_CREDOMATIC_TEST_Result2">
+          <Property Type="String" Name="COD_PROD" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="COMPRADOS" Nullable="true" />
+          <Property Type="Int32" Name="ENTRADA_TRASPASO" Nullable="true" />
+          <Property Type="Int32" Name="SALIDA_TRASPASO" Nullable="true" />
+          <Property Type="Int32" Name="INSTALADOS" Nullable="true" />
+          <Property Type="Int32" Name="SALIDA_VISITAS" Nullable="true" />
+          <Property Type="Int32" Name="ENTRADA_VISITAS" Nullable="true" />
+          <Property Type="Int32" Name="RETIRADOS" Nullable="true" />
+          <Property Type="Int32" Name="DESECHADO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_BUENO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_DESECHADO" Nullable="true" />
+          <Property Type="Int32" Name="REACONDICIONAMIENTO_FALTANTE" Nullable="true" />
+          <Property Type="Int32" Name="RETIRO_TRANSITO" Nullable="true" />
+          <Property Type="Int32" Name="SALDO_INI" Nullable="true" />
+          <Property Type="Int32" Name="SALDO_FIN" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1633,6 +1723,7 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           <EntitySetMapping Name="INV_MOV1">
             <EntityTypeMapping TypeName="BMS_DATA_DENTModel.INV_MOV1">
               <MappingFragment StoreEntitySet="INV_MOV1">
+                <ScalarProperty Name="PLACA" ColumnName="PLACA" />
                 <ScalarProperty Name="CIA" ColumnName="CIA" />
                 <ScalarProperty Name="MES_PROC" ColumnName="MES_PROC" />
                 <ScalarProperty Name="ANO_PROC" ColumnName="ANO_PROC" />
@@ -1700,6 +1791,7 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           <EntitySetMapping Name="INV_PROD">
             <EntityTypeMapping TypeName="BMS_DATA_DENTModel.INV_PROD">
               <MappingFragment StoreEntitySet="INV_PROD">
+                <ScalarProperty Name="UM_TRIBUTARIA" ColumnName="UM_TRIBUTARIA" />
                 <ScalarProperty Name="COMISION" ColumnName="COMISION" />
                 <ScalarProperty Name="COMPRAS_MOVIL" ColumnName="COMPRAS_MOVIL" />
                 <ScalarProperty Name="FOTO" ColumnName="FOTO" />
@@ -2223,6 +2315,28 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="F_INVENTARIO_CREDOMATIC_TEST" FunctionName="BMS_DATA_DENTModel.Store.F_INVENTARIO_CREDOMATIC_TEST">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BMS_DATA_DENTModel.F_INVENTARIO_CREDOMATIC_TEST_Result2">
+                <ScalarProperty Name="COD_PROD" ColumnName="COD_PROD" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="COMPRADOS" ColumnName="COMPRADOS" />
+                <ScalarProperty Name="ENTRADA_TRASPASO" ColumnName="ENTRADA_TRASPASO" />
+                <ScalarProperty Name="SALIDA_TRASPASO" ColumnName="SALIDA_TRASPASO" />
+                <ScalarProperty Name="INSTALADOS" ColumnName="INSTALADOS" />
+                <ScalarProperty Name="SALIDA_VISITAS" ColumnName="SALIDA_VISITAS" />
+                <ScalarProperty Name="ENTRADA_VISITAS" ColumnName="ENTRADA_VISITAS" />
+                <ScalarProperty Name="RETIRADOS" ColumnName="RETIRADOS" />
+                <ScalarProperty Name="DESECHADO" ColumnName="DESECHADO" />
+                <ScalarProperty Name="REACONDICIONAMIENTO_BUENO" ColumnName="REACONDICIONAMIENTO_BUENO" />
+                <ScalarProperty Name="REACONDICIONAMIENTO_DESECHADO" ColumnName="REACONDICIONAMIENTO_DESECHADO" />
+                <ScalarProperty Name="REACONDICIONAMIENTO_FALTANTE" ColumnName="REACONDICIONAMIENTO_FALTANTE" />
+                <ScalarProperty Name="RETIRO_TRANSITO" ColumnName="RETIRO_TRANSITO" />
+                <ScalarProperty Name="SALDO_INI" ColumnName="SALDO_INI" />
+                <ScalarProperty Name="SALDO_FIN" ColumnName="SALDO_FIN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

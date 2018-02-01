@@ -28,10 +28,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/Gestion_Activos.dll">
-      <publishTime>06/03/2017 13:58:27</publishTime>
+      <publishTime>01/16/2018 02:50:54</publishTime>
     </File>
     <File Include="bin/Gestion_Activos.pdb">
-      <publishTime>06/03/2017 13:58:27</publishTime>
+      <publishTime>01/16/2018 02:50:54</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
       <publishTime>03/17/2016 11:58:44</publishTime>
@@ -370,7 +370,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/30/2016 17:47:45</publishTime>
     </File>
     <File Include="Models/BMS_DATA.edmx.diagram">
-      <publishTime>04/04/2017 12:08:28</publishTime>
+      <publishTime>01/16/2018 02:30:22</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>03/23/2017 10:50:50</publishTime>
@@ -2968,7 +2968,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/07/2017 11:07:55</publishTime>
     </File>
     <File Include="Scripts/Views/Inventory_Movement/Get_Inventory.js">
-      <publishTime>12/14/2016 15:48:47</publishTime>
+      <publishTime>01/16/2018 02:38:05</publishTime>
     </File>
     <File Include="Scripts/Views/Product/Get_Serial.js">
       <publishTime>01/30/2017 10:58:11</publishTime>
@@ -3052,7 +3052,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2016 15:26:38</publishTime>
     </File>
     <File Include="Views/Inventory_Movement/Get_Inventory.cshtml">
-      <publishTime>12/14/2016 15:54:21</publishTime>
+      <publishTime>01/16/2018 02:36:17</publishTime>
     </File>
     <File Include="Views/MasterPage/MasterPage.cshtml">
       <publishTime>05/22/2017 13:54:59</publishTime>
@@ -3163,7 +3163,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2016 15:04:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/03/2017 14:05:34</publishTime>
+      <publishTime>01/16/2018 02:51:18</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -58,6 +58,7 @@
     <EntitySetMapping Name="INV_MOV1">
       <EntityTypeMapping TypeName="BMS_DATA_DENTModel.INV_MOV1">
         <MappingFragment StoreEntitySet="INV_MOV1">
+          <ScalarProperty Name="PLACA" ColumnName="PLACA" />
           <ScalarProperty Name="CIA" ColumnName="CIA" />
           <ScalarProperty Name="MES_PROC" ColumnName="MES_PROC" />
           <ScalarProperty Name="ANO_PROC" ColumnName="ANO_PROC" />
@@ -125,6 +126,7 @@
     <EntitySetMapping Name="INV_PROD">
       <EntityTypeMapping TypeName="BMS_DATA_DENTModel.INV_PROD">
         <MappingFragment StoreEntitySet="INV_PROD">
+          <ScalarProperty Name="UM_TRIBUTARIA" ColumnName="UM_TRIBUTARIA" />
           <ScalarProperty Name="COMISION" ColumnName="COMISION" />
           <ScalarProperty Name="COMPRAS_MOVIL" ColumnName="COMPRAS_MOVIL" />
           <ScalarProperty Name="FOTO" ColumnName="FOTO" />
@@ -648,5 +650,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="F_INVENTARIO_CREDOMATIC_TEST" FunctionName="BMS_DATA_DENTModel.Store.F_INVENTARIO_CREDOMATIC_TEST">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BMS_DATA_DENTModel.F_INVENTARIO_CREDOMATIC_TEST_Result2">
+          <ScalarProperty Name="COD_PROD" ColumnName="COD_PROD" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="COMPRADOS" ColumnName="COMPRADOS" />
+          <ScalarProperty Name="ENTRADA_TRASPASO" ColumnName="ENTRADA_TRASPASO" />
+          <ScalarProperty Name="SALIDA_TRASPASO" ColumnName="SALIDA_TRASPASO" />
+          <ScalarProperty Name="INSTALADOS" ColumnName="INSTALADOS" />
+          <ScalarProperty Name="SALIDA_VISITAS" ColumnName="SALIDA_VISITAS" />
+          <ScalarProperty Name="ENTRADA_VISITAS" ColumnName="ENTRADA_VISITAS" />
+          <ScalarProperty Name="RETIRADOS" ColumnName="RETIRADOS" />
+          <ScalarProperty Name="DESECHADO" ColumnName="DESECHADO" />
+          <ScalarProperty Name="REACONDICIONAMIENTO_BUENO" ColumnName="REACONDICIONAMIENTO_BUENO" />
+          <ScalarProperty Name="REACONDICIONAMIENTO_DESECHADO" ColumnName="REACONDICIONAMIENTO_DESECHADO" />
+          <ScalarProperty Name="REACONDICIONAMIENTO_FALTANTE" ColumnName="REACONDICIONAMIENTO_FALTANTE" />
+          <ScalarProperty Name="RETIRO_TRANSITO" ColumnName="RETIRO_TRANSITO" />
+          <ScalarProperty Name="SALDO_INI" ColumnName="SALDO_INI" />
+          <ScalarProperty Name="SALDO_FIN" ColumnName="SALDO_FIN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

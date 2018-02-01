@@ -75,9 +75,9 @@
                     </div>                    
                 </div>
 
-                <div class="col-xs-12 col-lg-9">
+                <div class="col-xs-12 col-lg-12">
                     @*<div class="box-body" style="max-height:800px; overflow-y:scroll; overflow-x:hidden;" >*@
-                    <div class="box-body">
+                    <div class="box-body" style="overflow-x: auto">
                         <table id="table1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -93,18 +93,34 @@
                                     <th class="text-light-blue text-center">
                                         @Html.DisplayNameFor(model => model.bought)
                                     </th>
+                                    <th class="text-light-blue text-center">
+                                        @Html.DisplayNameFor(model => model.transfer_entry)
+                                    </th>
+                                    <th class="text-yellow text-center">
+                                        @Html.DisplayNameFor(model => model.transfer_egress)
+                                    </th>
                                     <th class="text-yellow text-center">
                                         @Html.DisplayNameFor(model => model.installed)
+                                    </th>
+                                    <th class="text-yellow text-center">
+                                        @Html.DisplayNameFor(model => model.visit_egress)
+                                    </th>
+                                    <th class="text-green text-center">
+                                        @Html.DisplayNameFor(model => model.visit_entry)
                                     </th>
                                     <th class="text-orange text-center">
                                         @Html.DisplayNameFor(model => model.retired)
                                     </th>
+                                    <th class="text-red text-center">
+                                       @Html.DisplayNameFor(model => model.retired_in_transit)  
+                                    </th>   
                                     <th class="text-light-blue text-center">
-                                        @Html.DisplayNameFor(model => model.reconditioned)
+                                        @Html.DisplayNameFor(model => model.reconditioned_good)
                                     </th>
                                     <th class="text-red text-center">
-                                        @Html.DisplayNameFor(model => model.discarded)
+                                        @Html.DisplayNameFor(model => model.reconditioned_discarted)
                                     </th>
+                                    
                                     <th class="text-green text-center">
                                         @Html.DisplayNameFor(model => model.balance_end)
                                     </th>
@@ -127,16 +143,31 @@
                                             @Html.DisplayFor(model => item.bought)
                                         </td>
                                         <td class="text-center">
+                                            @Html.DisplayFor(model => item.transfer_entry)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(model => item.transfer_egress)
+                                        </td>
+                                        <td class="text-center">
                                             @Html.DisplayFor(model => item.installed)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(model => item.visit_egress)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(model => item.visit_entry)
                                         </td>
                                         <td class="text-center">
                                             @Html.DisplayFor(model => item.retired)
                                         </td>
                                         <td class="text-center">
-                                            @Html.DisplayFor(model => item.reconditioned)
+                                            @Html.DisplayFor(model => item.retired_in_transit)
                                         </td>
                                         <td class="text-center">
-                                            @Html.DisplayFor(model => item.discarded)
+                                            @Html.DisplayFor(model => item.reconditioned_good)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(model => item.reconditioned_discarted)
                                         </td>
                                         <td class="text-center">
                                             @item.get_total()

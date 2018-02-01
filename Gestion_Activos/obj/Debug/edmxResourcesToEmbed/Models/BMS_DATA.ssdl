@@ -150,6 +150,7 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
     <Property Name="MOTIVO" Type="varchar" MaxLength="300" />
     <Property Name="X" Type="char" MaxLength="20" />
     <Property Name="Y" Type="char" MaxLength="20" />
+    <Property Name="PLACA" Type="char" MaxLength="20" />
   </EntityType>
   <EntityType Name="INV_MOVS">
     <Key>
@@ -237,13 +238,14 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
     <Property Name="COD_UBIC" Type="char" MaxLength="10" />
     <Property Name="PEDIR" Type="char" MaxLength="1" />
     <Property Name="ULTIMO_FOB" Type="money" />
-    <Property Name="COD_BARRAS" Type="char" MaxLength="30" />
+    <Property Name="COD_BARRAS" Type="char" MaxLength="50" />
     <Property Name="NOTAS" Type="char" MaxLength="70" />
     <Property Name="ID_ABC" Type="char" MaxLength="1" />
     <Property Name="ID_INDICADOR" Type="char" MaxLength="1" />
     <Property Name="FOTO" Type="varchar" MaxLength="500" />
     <Property Name="COMPRAS_MOVIL" Type="decimal" Precision="18" Scale="2" />
     <Property Name="COMISION" Type="char" MaxLength="1" />
+    <Property Name="UM_TRIBUTARIA" Type="char" MaxLength="2" />
   </EntityType>
   <EntityType Name="INV_TECN">
     <Key>
@@ -512,7 +514,7 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
           <Property Name="DIRECCION_1" Type="varchar" MaxLength="500" />
           <Property Name="DIRECCION_2" Type="varchar" MaxLength="500" />
           <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="100" />
-          <Property Name="TELEFONO" Type="varchar" MaxLength="50" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="500" />
           <Property Name="N_COD_PROV" Type="varchar" MaxLength="50" />
           <Property Name="N_COD_CANT" Type="varchar" MaxLength="50" />
           <Property Name="N_COD_DIST" Type="varchar" MaxLength="50" />
@@ -610,6 +612,34 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
       </CollectionType>
     </ReturnType>
   </Function>
+  <Function Name="F_INVENTARIO_CREDOMATIC_TEST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MES" Type="varchar" Mode="In" />
+    <Parameter Name="ANO" Type="varchar" Mode="In" />
+    <Parameter Name="PARAMETRO" Type="varchar" Mode="In" />
+    <Parameter Name="P_CONSULTA" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="COD_PROD" Type="varchar" MaxLength="50" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="1000" />
+          <Property Name="COMPRADOS" Type="int" />
+          <Property Name="ENTRADA_TRASPASO" Type="int" />
+          <Property Name="SALIDA_TRASPASO" Type="int" />
+          <Property Name="INSTALADOS" Type="int" />
+          <Property Name="SALIDA_VISITAS" Type="int" />
+          <Property Name="ENTRADA_VISITAS" Type="int" />
+          <Property Name="RETIRADOS" Type="int" />
+          <Property Name="DESECHADO" Type="int" />
+          <Property Name="REACONDICIONAMIENTO_BUENO" Type="int" />
+          <Property Name="REACONDICIONAMIENTO_DESECHADO" Type="int" />
+          <Property Name="REACONDICIONAMIENTO_FALTANTE" Type="int" />
+          <Property Name="RETIRO_TRANSITO" Type="int" />
+          <Property Name="SALDO_INI" Type="int" />
+          <Property Name="SALDO_FIN" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <Function Name="F_MOVIMIENTOS_POR_PRODUCTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CIA" Type="varchar" Mode="In" />
     <Parameter Name="F_INICIO" Type="datetime" Mode="In" />
@@ -663,18 +693,18 @@ warning 6002: The table/view 'BMS_DATA_DENT.dbo.INV_DANOS' does not have a prima
     </ReturnType>
   </Function>
   <Function Name="F_REPORTE_MANTENIMIENTO_AFILIADOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="F_INICIO" Type="datetime" Mode="In" />
-    <Parameter Name="F_FIN" Type="datetime" Mode="In" />
+    <Parameter Name="F_INICIO" Type="date" Mode="In" />
+    <Parameter Name="F_FIN" Type="date" Mode="In" />
     <ReturnType>
       <CollectionType>
         <RowType>
-          <Property Name="ID_TICKET" Type="varchar" MaxLength="100" />
-          <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="100" />
-          <Property Name="N_AFILIADO" Type="varchar" MaxLength="50" />
-          <Property Name="T_SERVICE" Type="varchar" MaxLength="100" />
-          <Property Name="DIRECCION" Type="varchar" MaxLength="200" />
+          <Property Name="ID_TICKET" Type="varchar" MaxLength="500" />
+          <Property Name="NOMBRE_NEGOCIO" Type="varchar" MaxLength="500" />
+          <Property Name="N_AFILIADO" Type="varchar" MaxLength="100" />
+          <Property Name="T_SERVICE" Type="varchar" MaxLength="200" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="500" />
           <Property Name="FECHA" Type="date" />
-          <Property Name="TECNICO" Type="varchar" MaxLength="100" />
+          <Property Name="TECNICO" Type="varchar" MaxLength="500" />
         </RowType>
       </CollectionType>
     </ReturnType>

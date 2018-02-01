@@ -296,6 +296,15 @@
     <Compile Include="Models\F_INVENTARIO_CREDOMATIC_Result.cs">
       <DependentUpon>BMS_DATA.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\F_INVENTARIO_CREDOMATIC_TEST_Result.cs">
+      <DependentUpon>BMS_DATA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F_INVENTARIO_CREDOMATIC_TEST_Result1.cs">
+      <DependentUpon>BMS_DATA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F_INVENTARIO_CREDOMATIC_TEST_Result2.cs">
+      <DependentUpon>BMS_DATA.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\F_MOVIMIENTOS_POR_PRODUCTOS_Result.cs">
       <DependentUpon>BMS_DATA.tt</DependentUpon>
     </Compile>
